@@ -40,14 +40,14 @@ if __name__ == '__main__':
     
     ## TODO: Add any additional arguments that you will need to pass into your model
     
-    parser.add_argument('--C', type=float, default=1.0, 
-                       help='Regularization parameter. The strength of the regularization is inversely proportional to C. Must be strictly positive. The penalty is a squared l2 penalty. (default: 1.0)')
-    parser.add_argument('--kernel', type=str, default='rbf', 
-                       help='Specifies the kernel type to be used in the algorithm. It must be one of ‘linear’, ‘poly’, ‘rbf’, ‘sigmoid’, ‘precomputed’ or a callable. If none is given, ‘rbf’ will be used. If a callable is given it is used to pre-compute the kernel matrix from data matrices; that matrix should be an array of shape (n_samples, n_samples). (default: rbf)')
-    parser.add_argument('--gamma', type=str, default='scale', 
-                       help='Kernel coefficient for ‘rbf’, ‘poly’ and ‘sigmoid’. (default: scale)')
-    parser.add_argument('--random_state', type=int, default=42, 
-                       help='The seed of the pseudo random number generator used when shuffling the data for probability estimates. (default: 42)')
+#     parser.add_argument('--C', type=float, default=1.0, 
+#                        help='Regularization parameter. The strength of the regularization is inversely proportional to C. Must be strictly positive. The penalty is a squared l2 penalty. (default: 1.0)')
+#     parser.add_argument('--kernel', type=str, default='rbf', 
+#                        help='Specifies the kernel type to be used in the algorithm. It must be one of ‘linear’, ‘poly’, ‘rbf’, ‘sigmoid’, ‘precomputed’ or a callable. If none is given, ‘rbf’ will be used. If a callable is given it is used to pre-compute the kernel matrix from data matrices; that matrix should be an array of shape (n_samples, n_samples). (default: rbf)')
+#     parser.add_argument('--gamma', type=str, default='scale', 
+#                        help='Kernel coefficient for ‘rbf’, ‘poly’ and ‘sigmoid’. (default: scale)')
+#     parser.add_argument('--random_state', type=int, default=42, 
+#                        help='The seed of the pseudo random number generator used when shuffling the data for probability estimates. (default: 42)')
     
     # args holds all passed-in arguments
     args = parser.parse_args()
@@ -65,7 +65,7 @@ if __name__ == '__main__':
     
 
     ## TODO: Define a model 
-    model = SVC(C=args.C, kernel=args.kernel, gamma=args.gamma, random_state=args.randome_state)
+    model = SVC(C=35, gamma='auto', kernel='sigmoid', class_weight='balanced', random_state=42)
     
     
     
